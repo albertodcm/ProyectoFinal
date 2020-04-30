@@ -35,6 +35,18 @@ const routes: Routes = [
     redirectTo: 'tabs/home',
     pathMatch: 'full'
   },
+  {
+    path: 'event',
+    loadChildren: () => import('./modals/event/event.module').then( m => m.EventPageModule)
+  },
+  {
+    path: 'details',
+    loadChildren: () => import('./modals/details/details.module').then( m => m.DetailsPageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./modals/settings/settings.module').then( m => m.SettingsPageModule)
+  },
 ];
 
 @NgModule({
