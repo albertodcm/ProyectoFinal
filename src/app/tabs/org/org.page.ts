@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { DetailsPage } from '../modals/details/details.page';
 
 @Component({
   selector: 'app-org',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrgPage implements OnInit {
 
-  constructor() { }
+  constructor(public modalCtrl: ModalController) { }
 
   ngOnInit() {
+  }
+
+  async showDetails() {
+    const modal = await this.modalCtrl.create({
+      component: DetailsPage,
+    });
+    return await modal.present();
   }
 
 }

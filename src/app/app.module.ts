@@ -14,6 +14,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { DetailsPageModule } from './tabs/modals/details/details.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +27,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     IonicModule.forRoot(),
     AppRoutingModule,
-    SettingsPageModule],
+    SettingsPageModule,
+    DetailsPageModule
+  ],
 
   providers: [
     StatusBar,
