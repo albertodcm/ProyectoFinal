@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-settings',
@@ -8,7 +9,9 @@ import { ModalController } from '@ionic/angular';
 })
 export class SettingsPage implements OnInit {
 
-  constructor(public modalCtrl: ModalController) { }
+  constructor(public modalCtrl: ModalController,
+              private authService: AuthService,
+              private navCtrl: NavController) { }
 
   ngOnInit() {
   }
@@ -16,6 +19,12 @@ export class SettingsPage implements OnInit {
   dismiss() {
     console.log(' Entro al dismiss ');
     this.modalCtrl.dismiss();
+  }
+
+  cerrarSesion() {
+    this.authService.logout();
+    this.navCtrl.navigateRoot(['tabs/home']);
+    this.dismiss();
   }
 
 }
