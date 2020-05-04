@@ -1,9 +1,61 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="dismiss()">
+        <ion-icon size="large" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Iniciar Sesion</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-row>
+    <ion-col class="titulo">
+      <ion-text color="primary">
+        <h1>
+          Mi Servicio
+        </h1>
+      </ion-text>
+    </ion-col>
+  </ion-row>
 
+  <form [formGroup]="loginForm">
+    <ion-grid>
+      <ion-row class="padding">
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Correo</ion-label>
+            <ion-input formControlName="email" placeholder="Johndoe@compañia.com"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="padding">
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="stacked">Contraseña</ion-label>
+            <ion-input formControlName="password" [type]="showPassword ? 'text' : 'password'"></ion-input>
+            <ion-icon slot="end" [name]="passwordToggleICon" (click)="togglePassword()"></ion-icon>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="padding">
+        <ion-col size="12">
+          <ion-button color="secondary" expand="block" fill="solid" (click)="login()">Iniciar Sesion</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>    
+
+  </form>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="goToSignup()" expand="full" fill="none">¿Eres nuevo? Create una cuenta!</ion-button>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-button expand="full" fill="none">¿Olvidaste tu contraseña?</ion-button>
+  </ion-toolbar>
+</ion-footer>
