@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NavController, AlertController, ModalController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
+import { RecuperarPWDPage } from '../modals/recuperar-pwd/recuperar-pwd.page';
 
 @Component({
   selector: 'app-login',
@@ -64,5 +65,12 @@ export class LoginPage implements OnInit {
   dismiss() {
     console.log(' Entro al dismiss ');
     this.modalCtrl.dismiss();
+  }
+
+  async resetPassword() {
+    const modal = await this.modalCtrl.create({
+      component: RecuperarPWDPage,
+    });
+    return await modal.present();
   }
 }

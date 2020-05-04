@@ -13,7 +13,11 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },  {
+    path: 'recuperar-pwd',
+    loadChildren: () => import('./modals/recuperar-pwd/recuperar-pwd.module').then( m => m.RecuperarPWDPageModule)
   },
+
 ];
 @NgModule({
   imports: [
