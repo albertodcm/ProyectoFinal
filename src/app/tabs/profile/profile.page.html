@@ -1,9 +1,107 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Perfil</ion-title>
+    <ion-title>Mi Perfil</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="showSettings()">
+        <ion-icon size="large" name="cog-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid class="paddinggeneral">
+    <ion-row>
+      <ion-col>
+        <ion-avatar class="center">
+          <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-row class="paddinggeneral" class="centertext">
+      <ion-col>
+        <h1>
+           Nombre
+        </h1>
+      </ion-col>
+    </ion-row>
 
+    <div>
+      <ion-row>
+        <ion-col>
+          <h3>
+            Mi meta
+          </h3>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-progress-bar color="secondary" value="0.5"></ion-progress-bar>
+        </ion-col>
+      </ion-row>
+      <ion-row class="line">
+        <ion-col>
+          <h5>
+            llevas 11 horas
+          </h5>
+        </ion-col>
+        <ion-col class="righttext">
+          <ion-text color="secondary">
+            <h4> 50% </h4>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </div>
+
+      <div class="line">
+      <ion-row >
+        <ion-col size="8">
+          <h5>
+            Mis proximos eventos
+          </h5>
+        </ion-col>
+        <ion-col>
+          <ion-text color="primary">
+            <h6 class="righttext"> Ver mas </h6>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+
+      <ion-list>
+        <ion-card >
+          <img src="https://images.squarespace-cdn.com/content/v1/5aadc54285ede1bd72181a3a/1521339647830-LKHTH62ZRY5TCGVCW81P/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/shutterstock_538256848.jpg?format=1500w"/>
+          <ion-card-header>
+            <ion-card-subtitle>Fecha del evento</ion-card-subtitle>
+            <ion-card-title>Nombre del evento</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-list>
+    </div>
+
+
+
+      <ion-row>
+        <ion-col size="8">
+          <h5>
+            Eventos asistido
+          </h5>
+        </ion-col>
+        <ion-col>
+          <ion-text color="primary">
+            <h6 class="righttext"> Ver mas </h6>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+
+      <ion-list>
+        <ion-card >
+          <img src="https://images.squarespace-cdn.com/content/v1/5aadc54285ede1bd72181a3a/1521339647830-LKHTH62ZRY5TCGVCW81P/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/shutterstock_538256848.jpg?format=1500w"/>
+          <ion-card-header>
+           <ion-card-subtitle>Fecha del evento</ion-card-subtitle>
+            <ion-card-title>Nombre del evento</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-list>
+  </ion-grid>
 </ion-content>
