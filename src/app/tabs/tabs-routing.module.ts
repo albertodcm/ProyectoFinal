@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { AuthGuardGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
       },
       {
         path: 'profile',
-        loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+        loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule),
+        canLoad: [AuthGuardGuard]
       },
       {
         path: '',
