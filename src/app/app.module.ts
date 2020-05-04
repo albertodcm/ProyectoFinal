@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { DetailsPageModule } from './tabs/modals/details/details.module';
+import { AcercadePageModule } from './tabs/Modals/acercade/acercade.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +29,8 @@ import { DetailsPageModule } from './tabs/modals/details/details.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     SettingsPageModule,
-    DetailsPageModule
+    DetailsPageModule,
+    AcercadePageModule
   ],
 
   providers: [

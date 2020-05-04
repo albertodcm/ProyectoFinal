@@ -49,6 +49,10 @@ const routes: Routes = [
     path: 'settings',
     loadChildren: () => import('./modals/settings/settings.module').then( m => m.SettingsPageModule)
   },
+  {
+    path: 'acercade',
+    loadChildren: () => import('./Modals/acercade/acercade.module').then( m => m.AcercadePageModule)
+  },
 ];
 
 @NgModule({
