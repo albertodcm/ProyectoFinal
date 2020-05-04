@@ -1,9 +1,39 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon size="large" name="options-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Organizaciones</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar
+      (ionChange)="search($event)"
+      animated
+      placeholder="Busca la Organización"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content >
+
+  <ion-list class="padding" [hidden]="orgs?.length === 0">
+    <ion-item class="padding" *ngFor="let org of orgs" (click)="showDetails(org.id)">
+      <ion-avatar slot="start">
+        <img src="https://images.squarespace-cdn.com/content/v1/54a2e8cbe4b08f7628c934c8/1532381577789-JXY0DAPQX47HDQ9D7YUX/ke17ZwdGBToddI8pDm48kPx25wW2-RVvoRgxIT6HShBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpx0Qh3eD5PfZ_nDR0M7OIGaTx-0Okj4hzQeRKYKbt7WfTYFScRKDTW78PcnUqBGqX8/ODEON-Balham-Avatar-700px.png?format=500w">
+      </ion-avatar>
+      <ion-label>{{org.nombre}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list [hidden]="orgs?.length > 0">
+    <ion-item class="padding" *ngFor="let org of organizaciones" (click)="showDetails(org.id)">
+      <ion-avatar slot="start">
+        <img src="https://images.squarespace-cdn.com/content/v1/54a2e8cbe4b08f7628c934c8/1532381577789-JXY0DAPQX47HDQ9D7YUX/ke17ZwdGBToddI8pDm48kPx25wW2-RVvoRgxIT6HShBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpx0Qh3eD5PfZ_nDR0M7OIGaTx-0Okj4hzQeRKYKbt7WfTYFScRKDTW78PcnUqBGqX8/ODEON-Balham-Avatar-700px.png?format=500w">
+      </ion-avatar>
+      <ion-label>{{org.nombre}}</ion-label>
+    </ion-item>
+  </ion-list>
+
 
 </ion-content>
