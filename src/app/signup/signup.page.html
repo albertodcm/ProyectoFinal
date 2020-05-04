@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button (click)="dismiss()">
+        <ion-icon size="large" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Crear Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="signupForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="titulo">
+          <ion-text color="primary">
+            <h1>Mi Servicio</h1>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-text>
+            <p>Create una cuenta para participar en eventos.</p>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+ 
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input formControlName="name" placeholder="John Doe"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input formControlName="username" placeholder="johndoe123"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Correo</ion-label>
+            <ion-input formControlName="email" placeholder="Johndoe@compañia.com"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">Contraseña</ion-label>
+            <ion-input formControlName="password" type="password"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">Confirmar</ion-label>
+            <ion-input formControlName="confirmPassword" type="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input formControlName="telefono" type="text" placeholder="6643334455"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Escuela</ion-label>
+            <ion-input formControlName="escuela" type="text" placeholder="CETYS Universidad"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Género</ion-label>
+            <ion-select placeholder="Seleccionar" formControlName = "genero">
+              <ion-select-option value='mujer'>Mujer</ion-select-option>
+              <ion-select-option value='hombre'>Hombre</ion-select-option>
+              <ion-select-option value='nulo'>Sin Especificar</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size = "12">
+          <ion-item lines="full">
+            <ion-label position="floating">Fecha de Nacimiento</ion-label>
+            <ion-datetime (ionChange)="getDate($event)" formControlName="fecha" [value]="defaultDate"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="space">
+        <ion-col size="12">
+          <ion-button color="primary" expand="block" fill="solid" (click)="onSubmit()">Crear Cuenta</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="goToLogin()" expand="full" fill="none">Ya tienes cuenta? Iniciar sesion!</ion-button>
+  </ion-toolbar>
+</ion-footer>
