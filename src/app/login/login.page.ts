@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { NavController, AlertController, ModalController } from '@ionic/angular';
+import { NavController, AlertController, ModalController, LoadingController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
 import { RecuperarPWDPage } from '../modals/recuperar-pwd/recuperar-pwd.page';
+import { Router } from '@angular/router';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -15,13 +17,32 @@ export class LoginPage implements OnInit {
   showPassword = false;
   passwordToggleICon = 'eye';
 
+  loadingIndicator;
+  loading = false;
+
   constructor(private navCtrl: NavController,
               private authService: AuthService,
               private alertCtrl: AlertController,
-              public modalCtrl: ModalController) { }
+              public modalCtrl: ModalController,
+              private router: Router,
+              private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
     this.initForm();
+
+    const navigationId = this.router.getCurrentNavigation().id;
+
+    if (navigationId === 1) {
+      this.presentLoading('Cargando...');
+      this.authService.user$.pipe(take(1)).subscribe((user) => {
+        setTimeout(() => {
+          this.dismissLoading();
+        }, 200);
+        if (user) {
+          this.navCtrl.navigateRoot(['tabs']);
+        }
+      });
+    }
   }
 
   initForm(): void {
@@ -43,6 +64,7 @@ export class LoginPage implements OnInit {
       const password = this.loginForm.controls.password.value;
       console.log('entre al a la funcion');
       this.authService.login(email, password);
+      this.navCtrl.navigateRoot(['tabs/home']);
       console.log('exito');
     } else {
       this.presentAlert();
@@ -60,6 +82,19 @@ export class LoginPage implements OnInit {
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
+  }
+
+  async presentLoading(body: string) {
+    this.loadingIndicator = await this.loadingCtrl.create({
+      message: body
+    });
+    this.loading = true;
+    await this.loadingIndicator.present();
+  }
+
+  async dismissLoading() {
+    this.loading = false;
+    await this.loadingIndicator.dismiss();
   }
 
   dismiss() {

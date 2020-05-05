@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>Mi Perfil</ion-title>
     <ion-buttons slot="primary">
-      <ion-button (click)="showSettings()">
+      <ion-button (click)="showSettings(user?.id)">
         <ion-icon size="large" name="cog-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -21,7 +21,7 @@
     <ion-row class="paddinggeneral" class="centertext">
       <ion-col>
         <h1>
-           Nombre
+           {{ user?.name }}
         </h1>
       </ion-col>
     </ion-row>

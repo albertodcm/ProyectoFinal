@@ -2,39 +2,39 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 import { map } from 'rxjs/operators';
+import { User } from 'src/models/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private afs: AngularFirestore,
-              private authService: AuthService) { }
+  constructor(private afs: AngularFirestore) { }
 
   getUser(uid: string) {
+    return this.afs.doc(`users/${uid}`).valueChanges();
+  }
 
-    return this.afs.collection('users', ref => ref
-      .where('id', '==', uid))
-      .valueChanges();
+  getEditUser(uid: string) {
+    return this.afs.doc(`users/${uid}`).snapshotChanges().pipe(
+      map(doc => {
+        const data = doc.payload.data() as any;
+        const id = doc.payload.id;
+
+        return {id, ...data} as User;
+      })
+    );
   }
 
 
-  createUser(user: any) {
+  createUser(user: User) {
     return this.afs.doc(`users/${user.id}`).set(user);
   }
 
-  searchUsers(username: string) {
-    return this.afs.collection('users', ref => ref
-      .where('username', '>=', username)
-      .where('username', '<=', username + '\uf8ff')
-      .limit(10)
-      .orderBy('username'))
-      .snapshotChanges()
-      .pipe(map(actions => actions.map(a => {
-        return a.payload.doc.data();
-      }))
-    );
+  updateUser(user: User): Promise<void> {
+    return this.afs.doc(`users/${user.id}`).update(user);
   }
+
 
   async usernameExists(username: string): Promise<boolean> {
     return new Promise(async (resolve, reject) => {
