@@ -40,6 +40,7 @@ export class DetailsPage implements OnInit {
   }
 
   async showAcerca(orgId: string) {
+    console.log('entro al acerca')
     const modal = await this.modalCtrl.create({
       component: AcercadePage,
       componentProps: {

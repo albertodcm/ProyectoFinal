@@ -18,7 +18,10 @@ export class AcercadePage implements OnInit {
               private empresaService: EmpresaService) { }
 
   ngOnInit() {
+    console.log('entro al acerca')
+
     const id = this.navParams.get('orgId');
+    console.log('entro al acerca')
     if (id) {
       this.getEmpresa(id);
     } else {

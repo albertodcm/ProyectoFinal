@@ -30,7 +30,6 @@ export class ProfilePage implements OnInit {
     const sessionUser = JSON.parse(localStorage.getItem('user'));
     console.log(sessionUser.uid); // esto es lo que se necesita para sacar el usuario de firebase
     this.userService.getUser(sessionUser.uid);
-    console.log(this.user.email);
   }
 
 

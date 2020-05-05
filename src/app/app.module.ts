@@ -21,7 +21,6 @@ import { RecuperarPWDPageModule } from './modals/recuperar-pwd/recuperar-pwd.mod
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
