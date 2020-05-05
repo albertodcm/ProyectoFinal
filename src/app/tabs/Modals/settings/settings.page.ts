@@ -15,6 +15,7 @@ export class SettingsPage implements OnInit {
   user: User;
   userForm: FormGroup;
   defaultDate = '1987-06-30';
+  editar = false;
 
   constructor(public modalCtrl: ModalController,
               private authService: AuthService,
@@ -23,6 +24,9 @@ export class SettingsPage implements OnInit {
               private userService: UserService) { }
 
   ngOnInit() {
+    this.authService.user$.subscribe((user: any) => {
+      this.user = user;
+    });
     this.initForm();
     const uid = this.navParams.get('userid');
     if (uid) {
@@ -59,13 +63,13 @@ export class SettingsPage implements OnInit {
       };
 
       this.userService.updateUser(updatedUser).then(() => {
-        this.dismiss();
       }).catch((error) => {
         console.log('error');
       });
     } else {
       console.log('error');
     }
+    this.editar = false;
   }
 
   getDate(e) {
@@ -86,12 +90,10 @@ export class SettingsPage implements OnInit {
     this.dismiss();
   }
 
-  toggleEdit(): void { //no me salio :v
-    if (this.userForm.enabled) {
-      this.userForm.disable();
-    } else {
-      this.userForm.enable();
-    }
+
+  getEditable() {
+    this.editar = true;
   }
+
 
 }

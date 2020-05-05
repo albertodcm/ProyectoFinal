@@ -5,100 +5,153 @@
         <ion-icon size="large" name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
+    <ion-buttons *ngIf="editar == false" slot="primary">
+      <ion-button (click)="getEditable()">
+        <ion-icon size="large" name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Ajustes</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form [formGroup]="userForm">
-    <ion-grid>
-      <ion-row>
-        <ion-col size="6">
-          <ion-item>
-            <ion-label position="floating">Nombre</ion-label>
+
+<ion-content class="color">
+  <form *ngIf="editar == true" [formGroup]="userForm">
+    <div>
+      <ion-list>
+        <ion-item>
+          <ion-label>Nombre</ion-label>
+          <ion-note slot="end">
             <ion-input formControlName="name" placeholder="John Doe"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col size="6">
-          <ion-item>
-            <ion-label position="floating">Usuario</ion-label>
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Usuario</ion-label>
+          <ion-note slot="end">
             <ion-input formControlName="username" placeholder="johndoe123"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size="12">
-          <ion-item>
-            <ion-label position="floating">Correo</ion-label>
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Correo</ion-label>
+          <ion-note slot="end">
             <ion-input formControlName="email" placeholder="Johndoe@compañia.com"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size="12">
-          <ion-item>
-            <ion-label position="floating">Telefono</ion-label>
-            <ion-input formControlName="telefono" type="text" placeholder="6643334455"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size="12">
-          <ion-item>
-            <ion-label position="floating">Escuela</ion-label>
-            <ion-input formControlName="escuela" type="text" placeholder="CETYS Universidad"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size="12">
-          <ion-item>
-            <ion-label position="floating">Género</ion-label>
-            <ion-select placeholder="Seleccionar" formControlName = "genero">
-              <ion-select-option value='mujer'>Mujer</ion-select-option>
-              <ion-select-option value='hombre'>Hombre</ion-select-option>
-              <ion-select-option value='nulo'>Sin Especificar</ion-select-option>
-            </ion-select>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size = "12">
-          <ion-item lines="full">
-            <ion-label position="floating">Fecha de Nacimiento</ion-label>
-            <ion-datetime (ionChange)="getDate($event)" formControlName="fecha" [value]="defaultDate"></ion-datetime>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row >
-        <ion-col size ="12" >
-          <ion-button color="primary" expand="block" (click) = "updateUser()" >Actualizar</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
-  </form>
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Contraseña</ion-label>
+          <ion-note slot="end">
+            cambiar contraseña
+          </ion-note>
+        </ion-item>
+      </ion-list>
+    </div>
   
-  <div class="padding-top">
-    <ion-list >
-      <ion-item>
-        <ion-label (click) = "cerrarSesion()">Cerrar sesión</ion-label>
-      </ion-item>
-    </ion-list>
-  </div>
+    <div class="padding-top">
+      <ion-list>
+        <ion-item>
+          <ion-label>Teléfono</ion-label>
+          <ion-note slot="end">
+            <ion-input formControlName="telefono" type="text" placeholder="6643334455"></ion-input>
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Escuela</ion-label>
+          <ion-note slot="end">
+            <ion-input formControlName="escuela" type="text" placeholder="CETYS Universidad"></ion-input>
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Género</ion-label>
+          <ion-select placeholder="Seleccionar" formControlName = "genero">
+            <ion-select-option value='mujer'>Mujer</ion-select-option>
+            <ion-select-option value='hombre'>Hombre</ion-select-option>
+            <ion-select-option value='nulo'>Sin Especificar</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
 
-  <div class="padding-top">
-    <ion-list>
-      <ion-item>
-        <ion-label>Eliminar cuenta</ion-label>
-      </ion-item>
-    </ion-list>
+    <div class="padding-top">
+      <ion-row>
+        <ion-col size ="12" >
+          <ion-button color="secondary" expand="block" (click) = "updateUser()" >Actualizar</ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </form>
+
+
+  <div *ngIf="editar == false">
+
+    <div>
+      <ion-list>
+        <ion-item>
+          <ion-label>Nombre</ion-label>
+          <ion-note slot="end">
+            {{ user?.name }}
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Usuario</ion-label>
+          <ion-note slot="end">
+            {{ user?.username }}
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Correo</ion-label>
+          <ion-note slot="end">
+            {{ user?.email }}
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Contraseña</ion-label>
+          <ion-note slot="end">
+            cambiar contraseña
+          </ion-note>
+        </ion-item>
+      </ion-list>
+    </div>
+  
+    <div class="padding-top">
+      <ion-list>
+        <ion-item>
+          <ion-label>Teléfono</ion-label>
+          <ion-note slot="end">
+            {{ user?.telefono }}
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Escuela</ion-label>
+          <ion-note slot="end">
+            {{ user?.escuela }}
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Género</ion-label>
+          <ion-note slot="end">
+            {{ user?.genero }}
+          </ion-note>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="padding-top">
+      <ion-list >
+        <ion-item>
+          <ion-label (click) = "cerrarSesion()">Cerrar sesión</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  
+    <div class="padding-top">
+      <ion-list>
+        <ion-item>
+          <ion-label>Eliminar cuenta</ion-label>
+    
+        </ion-item>
+      </ion-list>
+    </div>
+
   </div>
 
 </ion-content>
