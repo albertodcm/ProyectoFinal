@@ -10,71 +10,73 @@
 </ion-header>
 
 <ion-content>
-  <ion-list class="padding-bottom">
-    <ion-item>
-      <ion-label>Nombre</ion-label>
-      <ion-note slot="end">
-        Nombre aqui
-      </ion-note>
-    </ion-item>
-    <ion-item>
-      <ion-label>Usuario</ion-label>
-      <ion-note slot="end">
-        usuariovaaqui
-      </ion-note>
-    </ion-item>
-    <ion-item>
-      <ion-label>Correo</ion-label>
-      <ion-note slot="end">
-        correo@va.aqui
-      </ion-note>
-    </ion-item>
-    <ion-item>
-      <ion-label>Contrasena</ion-label>
-      <ion-note slot="end">
-        cambiar contrasena
-      </ion-note>
-    </ion-item>
-  </ion-list>
+  <div>
+    <ion-list>
+      <ion-item>
+        <ion-label>Nombre</ion-label>
+        <ion-note slot="end">
+          Nombre aqui
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Usuario</ion-label>
+        <ion-note slot="end">
+          usuariovaaqui
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Correo</ion-label>
+        <ion-note slot="end">
+          correo@va.aqui
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Contraseña</ion-label>
+        <ion-note slot="end">
+          cambiar contraseña
+        </ion-note>
+      </ion-item>
+    </ion-list>
+  </div>
 
-  <ion-list class="padding-bottom">
-    <ion-item>
-      <ion-label>Telefono</ion-label>
-      <ion-note slot="end">
-        664 123 1234
-      </ion-note>
-    </ion-item>
-    <ion-item>
-      <ion-label>Escuela</ion-label>
-      <ion-note slot="end">
-        Nombre de Escuela
-      </ion-note>
-    </ion-item>
-    <ion-item>
-      <ion-label>Genero</ion-label>
-      <ion-select placeholder="Seleccionar">
-        <ion-select-option value="f">Mujer</ion-select-option>
-        <ion-select-option value="m">Hombre</ion-select-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+  <div class="padding-top">
+    <ion-list>
+      <ion-item>
+        <ion-label>Teléfono</ion-label>
+        <ion-note slot="end">
+          664 123 1234
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Escuela</ion-label>
+        <ion-note slot="end">
+          Nombre de Escuela
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Género</ion-label>
+        <ion-select placeholder="Seleccionar">
+          <ion-select-option value="f">Mujer</ion-select-option>
+          <ion-select-option value="m">Hombre</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
 
+  <div class="padding-top">
+    <ion-list >
+      <ion-item>
+        <ion-label (click) = "cerrarSesion()">Cerrar sesión</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 
-
-
-  <ion-list class="padding-bottom">
-    <ion-item>
-      <ion-label (click) = "cerrarSesion()">Cerrar sesion</ion-label>
-    </ion-item>
-  </ion-list>
-
-  <ion-list>
-    <ion-item>
-      <ion-label>Eliminar cuenta</ion-label>
-
-    </ion-item>
-  </ion-list>
-
-
+  <div class="padding-top">
+    <ion-list>
+      <ion-item>
+        <ion-label>Eliminar cuenta</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 
 </ion-content>
