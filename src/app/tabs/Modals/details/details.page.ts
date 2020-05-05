@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, NavController, NavParams, AlertController } from '@ionic/angular';
 import { EmpresaService } from 'src/app/services/empresa.service';
 import { Empresa } from 'src/models/empresa.model';
-import { AcercadePage } from '../acercade/acercade.page';
+import { AcercadePage } from 'src/app/Modals/acercade/acercade.page';
 
 @Component({
   selector: 'app-details',

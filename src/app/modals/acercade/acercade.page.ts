@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Empresa } from 'src/models/empresa.model';
 import { ModalController, NavParams, NavController } from '@ionic/angular';
+import { Empresa } from 'src/models/empresa.model';
 import { EmpresaService } from 'src/app/services/empresa.service';
 
 @Component({
@@ -14,20 +14,18 @@ export class AcercadePage implements OnInit {
 
   constructor(private modalCtrl: ModalController,
               private navParams: NavParams,
-              private navCtrl: NavController,
-              private empresaService: EmpresaService) { }
+              private empresaService: EmpresaService,
+              private navCtrl: NavController) { }
 
   ngOnInit() {
-    console.log('entro al acerca')
-
     const id = this.navParams.get('orgId');
-    console.log('entro al acerca')
     if (id) {
       this.getEmpresa(id);
     } else {
       this.navCtrl.navigateRoot('tabs/org');
     }
   }
+
   dismiss() {
     console.log(' Entro al dismiss ');
     this.modalCtrl.dismiss();
@@ -38,6 +36,7 @@ export class AcercadePage implements OnInit {
       this.empresa = empresa;
     });
   }
+
 
 
 }
