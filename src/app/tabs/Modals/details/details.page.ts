@@ -12,6 +12,9 @@ import { AcercadePage } from 'src/app/Modals/acercade/acercade.page';
 export class DetailsPage implements OnInit {
 
   empresa: Empresa;
+  celular
+  correo
+  telefono
 
   constructor(public modalCtrl: ModalController,
               private navParams: NavParams,
@@ -36,6 +39,9 @@ export class DetailsPage implements OnInit {
   getEmpresa(orgId: string) {
     this.empresaService.getEmpresa(orgId).subscribe((empresa: Empresa) => {
       this.empresa = empresa;
+      this.telefono = empresa.telefono
+      this.correo = empresa.correo
+      this.celular = empresa.celular
     })
   }
 
@@ -62,6 +68,18 @@ export class DetailsPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  openCall(){
+    window.location.href="tel:" + this.telefono;
+  }
+
+  openMail(){
+    window.location.href="mailto::" + this.correo;
+  }
+
+  openWhatsapp(){	
+    window.location.href = "https://wa.me/" + this.celular;
   }
 
 }

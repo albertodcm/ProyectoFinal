@@ -39,21 +39,21 @@
     <ion-row class="paddingtop">
       <ion-col>
         <ion-buttons>
-          <ion-button (click)="presentInfo('Teléfono', empresa?.telefono)" size="large" class="center" color="secondary">
+          <ion-button (click)="openCall()" size="large" class="center" color="secondary">
             <ion-icon name="call"></ion-icon>   
           </ion-button>
         </ion-buttons>
       </ion-col>
       <ion-col>
         <ion-buttons>
-          <ion-button (click)="presentInfo('Correo', empresa?.correo)" size="large" class="center" color="secondary">
+          <ion-button (click)="openMail()" size="large" class="center" color="secondary">
             <ion-icon name="mail"></ion-icon>   
           </ion-button>
         </ion-buttons>
       </ion-col>
       <ion-col>
         <ion-buttons fill="outline" shape="round">
-          <ion-button (click)="presentInfo('Celular', empresa?.celular)" size="large" class="center" color="secondary">
+          <ion-button (click)="openWhatsapp()" size="large" class="center" color="secondary">
             <ion-icon name="logo-whatsapp"></ion-icon>   
           </ion-button>
         </ion-buttons>
