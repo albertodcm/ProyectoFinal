@@ -1,9 +1,93 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>event</ion-title>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="dismiss()">
+        <ion-icon size="large" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="dismiss()">
+        <ion-icon size="large" name="share-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="dismiss()">
+        <ion-icon size="large" name="star-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{evento?.nombre}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <ion-row>
+    <ion-col class="nopadding">
+      <img src="https://images.squarespace-cdn.com/content/v1/5aadc54285ede1bd72181a3a/1521339647830-LKHTH62ZRY5TCGVCW81P/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/shutterstock_538256848.jpg?format=1500w"/>
+    </ion-col>
+  </ion-row>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1 class="nomargin">{{evento?.nombre}}</h1> <br>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col class="allign" size="1">
+        <ion-icon name="calendar-outline"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <p class="nomargin">{{evento?.fecha}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row  class="line">
+      <ion-col class="allign" size="1">
+        <ion-icon name="business-outline"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <h5 class="nomargin">{{evento?.emrpesa}}</h5>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row  class="line">
+      <ion-col>
+        <p>{{evento?.detalle}}</p>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row class="paddingtop">
+      <ion-col class="allign" size="1">
+        <ion-icon name="pin-outline"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <h5 class="nomargin">{{evento?.direccion}}</h5>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="allign" size="1">
+        <ion-icon name="time-outline"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <h5 class="nomargin">Horas de servicio: {{evento?.horas}}</h5>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+
 </ion-content>
+
+
+
+<ion-footer>
+  <ion-toolbar  class="padding">
+    <p>Espacios: {{evento?.espacios}}</p>
+    <ion-button slot="end" color="secondary">Inscribirme</ion-button>
+  </ion-toolbar>
+</ion-footer>
