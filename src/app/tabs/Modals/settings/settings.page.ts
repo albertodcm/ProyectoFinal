@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, NavController, NavParams } from '@ionic/angular';
+import { ModalController, NavController, NavParams, AlertController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/models/user.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -21,7 +21,8 @@ export class SettingsPage implements OnInit {
               private authService: AuthService,
               private navCtrl: NavController,
               private navParams: NavParams,
-              private userService: UserService) { }
+              private userService: UserService,
+              private alertCtrl: AlertController) { }
 
   ngOnInit() {
     this.authService.user$.subscribe((user: any) => {
@@ -94,6 +95,32 @@ export class SettingsPage implements OnInit {
   getEditable() {
     this.editar = true;
   }
+
+  CambiarPWD() {
+
+    console.log("entro a cambiar pass")
+      const email = this.user.email;
+      this.authService.resetPassword(email);
+      this.presentAlert('Listo', 'Le mandamos un correo electronico para cambiar su contraseña');
+  }
+
+  async presentAlert(title: string, body: string) {
+    const alert = await this.alertCtrl.create({
+      header: title,
+      message: body,
+      buttons: ['Okay!']
+    });
+
+    await alert.present();
+  }
+
+  // deleteUser(uid: string) {
+  //   this.user.delete().then(function() {
+  //     // User deleted.
+  //   }).catch(function(error) {
+  //     // An error happened.
+  //   });
+  // }
 
 
 }

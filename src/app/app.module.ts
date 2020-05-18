@@ -17,6 +17,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { DetailsPageModule } from './tabs/modals/details/details.module';
 import { AcercadePageModule } from './Modals/acercade/acercade.module';
 import { RecuperarPWDPageModule } from './modals/recuperar-pwd/recuperar-pwd.module';
+import { EventPageModule } from './tabs/modals/event/event.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,7 +32,8 @@ import { RecuperarPWDPageModule } from './modals/recuperar-pwd/recuperar-pwd.mod
     SettingsPageModule,
     DetailsPageModule,
     AcercadePageModule,
-    RecuperarPWDPageModule
+    RecuperarPWDPageModule,
+    EventPageModule
   ],
 
   providers: [
