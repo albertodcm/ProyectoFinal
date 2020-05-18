@@ -85,9 +85,16 @@
 
 
 
-<ion-footer>
+<ion-footer *ngIf="evento?.espacios > 0">
   <ion-toolbar  class="padding">
     <p>Espacios: {{evento?.espacios}}</p>
     <ion-button slot="end" color="secondary">Inscribirme</ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+<ion-footer *ngIf="evento?.espacios === 0">
+  <ion-toolbar  class="padding">
+    <p>Espacios: {{evento?.espacios}}</p>
+    <ion-button disabled slot="end" color="secondary">Inscribirme</ion-button>
   </ion-toolbar>
 </ion-footer>
