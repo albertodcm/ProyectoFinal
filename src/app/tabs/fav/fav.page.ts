@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavPage implements OnInit {
 
-  constructor() { }
+  status: 'ev';
 
   ngOnInit() {
+    this.status = 'ev';
+  }
+
+  segmentChanged(ev: any) {
+    console.log('Segment changed', ev);
   }
 
 }

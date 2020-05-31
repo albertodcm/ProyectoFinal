@@ -40,4 +40,8 @@ export class AuthService {
   resetPassword(email: string): Promise<void> {
     return this.afa.auth.sendPasswordResetEmail(email);
   }
+
+  deleteUser() {
+    return this.afa.auth.currentUser.delete();
+  }
 }

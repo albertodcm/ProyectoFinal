@@ -35,5 +35,10 @@ export class ProfilePage implements OnInit {
     return await modal.present();
   }
 
+  UserDelete() {
+    
+  }
+
+
 
 }

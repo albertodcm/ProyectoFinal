@@ -6,4 +6,32 @@
 
 <ion-content>
 
+  <ion-segment [(ngModel)]="status" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="ev">
+      <ion-label>eventos</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="org">
+      <ion-label>organizaciones</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="status">
+
+    <ion-list *ngSwitchCase="'ev'">
+      <p>Lista de eventos favoritos</p>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'org'">
+      <p>Lista de organizaciones favoritos</p>
+
+    </ion-list>
+
+
+
+  </div>
+
+
+
+  
 </ion-content>

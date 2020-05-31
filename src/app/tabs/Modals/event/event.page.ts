@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams, NavController } from '@ionic/angular';
 import { EventosService } from 'src/app/services/eventos.service';
 import { Evento } from 'src/models/evento.model';
+import { Plugins } from '@capacitor/core';
+
+const { Geolocation } = Plugins;
+
+declare var google;
 
 @Component({
   selector: 'app-event',

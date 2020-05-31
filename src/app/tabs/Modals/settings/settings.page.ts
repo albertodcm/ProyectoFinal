@@ -114,13 +114,10 @@ export class SettingsPage implements OnInit {
     await alert.present();
   }
 
-  // deleteUser(uid: string) {
-  //   this.user.delete().then(function() {
-  //     // User deleted.
-  //   }).catch(function(error) {
-  //     // An error happened.
-  //   });
-  // }
+  userDelete() {
+    this.authService.deleteUser().then(() => {
+    }).catch()
+  }
 
 
 }
