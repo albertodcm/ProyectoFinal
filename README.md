@@ -35,12 +35,12 @@ To run a local instance of a project, just follow these steps.
 1. Clone the repo
 
 ```bash
-git clone https://github.com/antoniogodoy17/ICC111C6.git
+git clone https://github.com/albertodcm/ProyectoFinal.git
 ```
 
-2. Cd into the required folder, i.e. the randomActivity.
+2. Cd into the required folder, i.e. ProyectoFinal
 ```bash
-cd ICC111C6/angular/randomActivity
+cd your route/ProyectoFinal
 ```
 
 3. Install npm packages
