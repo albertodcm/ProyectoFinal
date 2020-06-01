@@ -9,7 +9,7 @@
 * [Authors](#authors)
 
 # About
-Here you will find all the activities necessary for the Software Engineering course.
+MiServicio is a free application that helps the student community find events and companies to carry out their social service, as well as keep track of the hours completed. Use MiServicio application to find the next events so that you can carry out your social service in a simpler way.
 
 # Objective
 The main objective is to facilitate student access to the source code of each application, in order to review and compare it with their own.
@@ -47,7 +47,21 @@ cd your route/ProyectoFinal
 ```bash
 npm install
 ```
-4. Run the project
+
+4.  Install Firebase packages
+```bash
+npm install
+```
+
+5.  Install capacitor packages
+```bash
+--save @capacitor/core @capacitor/cli
+cap init
+ionic build
+npx cap add ios
+```
+
+6. Run the project
 > For Angular projects use `ng`.
 ```bash
 ng serve 
