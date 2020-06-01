@@ -24,6 +24,7 @@ To successfully clone, configure and run each project, you must have installed:
 * Node.js
 * Npm
 * Angular 8
+* Capacitor
 * Ionic Framework 5 [only for Ionic apps]
 * Firebase [only for Ionic apps]
 * Have a Firebase Project (you can set it up logging in with your Google account on [Firebase Console](https://console.firebase.google.com)) [Only for Ionic apps]
