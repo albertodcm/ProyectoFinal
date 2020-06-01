@@ -12,7 +12,7 @@
 MiServicio is a free application that helps the student community find events and companies to carry out their social service, as well as keep track of the hours completed. Use MiServicio application to find the next events so that you can carry out your social service in a simpler way.
 
 # Objective
-The main objective is to facilitate student access to the source code of each application, in order to review and compare it with their own.
+The main objective is to inspire people to perform social service through a digital platform, have a count of hours covered in social service and xamine the information of the different organizations in which the social service can be covered, which have email, telephone number, location and general information.
 
 # Getting Started
 In this section, you will be able to clone this repository and set up a local instance of each application. 
