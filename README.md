@@ -1,4 +1,4 @@
-# ICC111C6
+# MiServicio
 
 ## Table of contents
 * [About](#about)
@@ -7,6 +7,7 @@
     * [Prerequisites](#prerequisites)
     * [Setup](#setup)
 * [Authors](#authors)
+* [Gratitudes](#gratitudes)
 
 # About
 MiServicio is a free application that helps the student community find events and companies to carry out their social service, as well as keep track of the hours completed. Use MiServicio application to find the next events so that you can carry out your social service in a simpler way.
@@ -75,4 +76,7 @@ ionic serve
 # Authors
 * [Alberto Cruz](https://github.com/albertodcm)
 * [Luis Muñoz](https://github.com/ludamuac)
-* [Hugo Sevilla](HugoElcabezas)
+* [Hugo Sevilla](https://github.com/HugoElcabezas)
+
+# Gratitudes
+We are thankful to: [Ionic](https://ionicframework.com/docs) and [Capacitor](https://capacitor.ionicframework.com/docs/) which provided us with documentation to complete our work.
