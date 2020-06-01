@@ -57,15 +57,11 @@ export class LoginPage implements OnInit {
   }
 
   login(): void {
-    console.log('entre al log in');
     if (this.loginForm.valid) {
-      console.log('entre al if');
       const email = this.loginForm.controls.email.value;
       const password = this.loginForm.controls.password.value;
-      console.log('entre al a la funcion');
       this.authService.login(email, password);
       this.navCtrl.navigateRoot(['tabs/home']);
-      console.log('exito');
     } else {
       this.presentAlert();
     }
@@ -98,7 +94,6 @@ export class LoginPage implements OnInit {
   }
 
   dismiss() {
-    console.log(' Entro al dismiss ');
     this.modalCtrl.dismiss();
   }
 

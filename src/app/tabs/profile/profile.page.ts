@@ -14,16 +14,13 @@ export class ProfilePage implements OnInit {
   user: User;
 
   constructor(public modalCtrl: ModalController,
-              private authService: AuthService) {
-    }
-
+              private authService: AuthService) {}
 
   ngOnInit() {
     this.authService.user$.subscribe((user: any) => {
       this.user = user;
     });
   }
-
 
   async showSettings(userid: string) {
     const modal = await this.modalCtrl.create({
@@ -34,11 +31,4 @@ export class ProfilePage implements OnInit {
     });
     return await modal.present();
   }
-
-  UserDelete() {
-    
-  }
-
-
-
 }

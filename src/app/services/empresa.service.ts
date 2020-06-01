@@ -33,20 +33,6 @@ export class EmpresaService {
     );
   }
 
-  createEmpresa(org: Empresa): Promise<void> {
-    org.id = this.afs.createId();
-
-    return this.afs.doc(`organizaciones/${org.id}`).set(org);
-  }
-
-  updateEmpresa(org: Empresa): Promise<void> {
-    return this.afs.doc(`organizaciones/${org.id}`).update(org);
-  }
-
-  deleteEmpresa(orgId: string): Promise<void> {
-    return this.afs.doc(`organizaciones/${orgId}`).delete();
-  }
-
   searchEmpresa(name: string) {
     return this.afs.collection('organizaciones', ref => ref
       .where('nombre', '>=', name)

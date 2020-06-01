@@ -14,7 +14,6 @@ export class FavPage implements OnInit {
   }
 
   segmentChanged(ev: any) {
-    console.log('Segment changed', ev);
   }
 
 }

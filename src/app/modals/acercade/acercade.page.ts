@@ -27,7 +27,6 @@ export class AcercadePage implements OnInit {
   }
 
   dismiss() {
-    console.log(' Entro al dismiss ');
     this.modalCtrl.dismiss();
   }
 

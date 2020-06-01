@@ -18,7 +18,8 @@ const routes: Routes = [
       },
       {
         path: 'fav',
-        loadChildren: () => import('./fav/fav.module').then( m => m.FavPageModule)
+        loadChildren: () => import('./fav/fav.module').then( m => m.FavPageModule),
+        canLoad: [AuthGuardGuard]
       },
       {
         path: 'profile',

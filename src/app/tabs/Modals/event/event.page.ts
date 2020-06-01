@@ -32,7 +32,6 @@ export class EventPage implements OnInit {
   }
 
   dismiss() {
-    console.log(' Entro al dismiss ');
     this.modalCtrl.dismiss();
   }
 

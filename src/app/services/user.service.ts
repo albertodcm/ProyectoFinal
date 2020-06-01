@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { AuthService } from './auth.service';
 import { map } from 'rxjs/operators';
 import { User } from 'src/models/user.model';
 
@@ -26,7 +25,6 @@ export class UserService {
     );
   }
 
-
   createUser(user: User) {
     return this.afs.doc(`users/${user.id}`).set(user);
   }
@@ -34,7 +32,6 @@ export class UserService {
   updateUser(user: User): Promise<void> {
     return this.afs.doc(`users/${user.id}`).update(user);
   }
-
 
   async usernameExists(username: string): Promise<boolean> {
     return new Promise(async (resolve, reject) => {

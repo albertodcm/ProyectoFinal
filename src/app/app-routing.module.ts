@@ -18,7 +18,6 @@ const routes: Routes = [
     path: 'recuperar-pwd',
     loadChildren: () => import('./modals/recuperar-pwd/recuperar-pwd.module').then( m => m.RecuperarPWDPageModule)
   },
-
 ];
 @NgModule({
   imports: [

@@ -3,7 +3,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Evento } from 'src/models/evento.model';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { OrgPage } from '../tabs/org/org.page';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +16,6 @@ export class EventosService {
       map(a => {
         const data = a.payload.data() as any;
         const id = a.payload;
-
         return { id, ...data} as Evento;
       })
     );
@@ -45,13 +43,6 @@ export class EventosService {
         return a.payload.doc.data();
       }))
     );
-  }
-
-  // solo para crear los dummies, esto va en la app de empresas
-  createEvento(evento: Evento): Promise<void> {
-    evento.id = this.afs.createId();
-
-    return this.afs.doc(`eventos/${evento.id}`).set(evento);
   }
 
 

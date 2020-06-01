@@ -81,7 +81,6 @@ export class SettingsPage implements OnInit {
  }
 
   dismiss() {
-    console.log(' Entro al dismiss ');
     this.modalCtrl.dismiss();
   }
 
@@ -97,8 +96,6 @@ export class SettingsPage implements OnInit {
   }
 
   CambiarPWD() {
-
-    console.log("entro a cambiar pass")
       const email = this.user.email;
       this.authService.resetPassword(email);
       this.presentAlert('Listo', 'Le mandamos un correo electronico para cambiar su contraseña');

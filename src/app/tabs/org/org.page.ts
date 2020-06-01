@@ -47,5 +47,4 @@ export class OrgPage implements OnInit {
       this.orgs = [];
     }
   }
-
 }

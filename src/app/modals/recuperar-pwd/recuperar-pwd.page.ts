@@ -64,7 +64,6 @@ export class RecuperarPWDPage implements OnInit {
   }
 
   dismiss() {
-    console.log(' Entro al dismiss ');
     this.modalCtrl.dismiss();
   }
 
