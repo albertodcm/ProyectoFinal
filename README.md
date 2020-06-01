@@ -58,4 +58,6 @@ ionic serve
 ```
 
 # Authors
-* [Antonio Godoy](https://github.com/antoniogodoy17)
+* [Alberto Cruz](https://github.com/albertodcm)
+* [Luis Muñoz](https://github.com/ludamuac)
+* [Hugo Sevilla](HugoElcabezas)
