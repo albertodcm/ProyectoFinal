@@ -20,7 +20,6 @@
 </ion-header>
 
 <ion-content>
-
   <ion-row>
     <ion-col class="nopadding">
       <img src="https://images.squarespace-cdn.com/content/v1/5aadc54285ede1bd72181a3a/1521339647830-LKHTH62ZRY5TCGVCW81P/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/shutterstock_538256848.jpg?format=1500w"/>
@@ -48,7 +47,7 @@
         <ion-icon name="business-outline"></ion-icon>
       </ion-col>
       <ion-col>
-        <h5 class="nomargin">{{evento?.emrpesa}}</h5>
+        <h5 class="nomargin">{{evento?.empresa}}</h5>
       </ion-col>
     </ion-row>
   
@@ -57,8 +56,6 @@
         <p>{{evento?.detalle}}</p>
       </ion-col>
     </ion-row>
-
-
     <ion-row class="paddingtop">
       <ion-col class="allign" size="1">
         <ion-icon name="pin-outline"></ion-icon>
@@ -78,13 +75,8 @@
     </ion-row>
 
   </ion-grid>
-
-
   <div #mapElement class="map"></div>
-
 </ion-content>
-
-
 
 <ion-footer *ngIf="evento?.espacios > 0">
   <ion-toolbar  class="padding">
