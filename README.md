@@ -50,7 +50,7 @@ npm install
 
 4.  Install Firebase packages
 ```bash
-npm install
+npm install @angular/fire firebase --save
 ```
 
 5.  Install capacitor packages
